@@ -9,7 +9,7 @@ const DataEntry = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get("http://localhost:4000/api/data");
+        const response = await axiosInstance.get("https://data-entry-table.vercel.app/api/data");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

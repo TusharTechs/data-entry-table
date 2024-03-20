@@ -13,7 +13,7 @@ const CreateEntry = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.post("http://localhost:4000/api/data", { name, email, age, phone });
+      await axiosInstance.post("https://data-entry-table.vercel.app/api/data", { name, email, age, phone });
       navigate("/");
     } catch (error) {
       console.error("Error adding data:", error);

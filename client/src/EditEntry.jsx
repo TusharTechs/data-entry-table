@@ -13,7 +13,7 @@ const EditEntry = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get(`http://localhost:4000/api/data/${id}`);
+        const response = await axiosInstance.get(`https://data-entry-table.vercel.app/api/data/${id}`);
         const { name, email, age, phone } = response.data;
         setName(name);
         setEmail(email);
@@ -29,7 +29,7 @@ const EditEntry = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.put(`http://localhost:4000/api/data/${id}`, { name, email, age, phone });
+      await axiosInstance.put(`https://data-entry-table.vercel.app/api/data/${id}`, { name, email, age, phone });
       navigate("/");
     } catch (error) {
       console.error("Error updating data:", error);
